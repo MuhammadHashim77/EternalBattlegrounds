@@ -5083,7 +5083,7 @@ MonoBehaviour:
   muzzleFlash: {fileID: 3262432675930308267}
   playerCollider: {fileID: 3386247241812633823}
   projectileSpeed: 30
-  fireRate: 0.75
+  fireRate: 2
 --- !u!136 &3386247241812633823
 CapsuleCollider:
   m_ObjectHideFlags: 0
