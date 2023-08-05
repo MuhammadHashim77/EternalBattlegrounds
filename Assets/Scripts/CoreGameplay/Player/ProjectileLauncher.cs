@@ -103,6 +103,11 @@ public class ProjectileLauncher : NetworkBehaviour
 
         Physics.IgnoreCollision(playerCollider, projectileInstance.GetComponent<Collider>());
 
+        if(projectileInstance.TryGetComponent<DealDamageOnContact>(out DealDamageOnContact dealDmg))
+        {
+            dealDmg.SetOwner(OwnerClientId);
+        }
+
         if (projectileInstance.TryGetComponent<Rigidbody>(out Rigidbody rb))
         {
             rb.velocity = direction * projectileSpeed;
