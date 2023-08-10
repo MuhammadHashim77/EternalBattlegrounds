@@ -7,11 +7,14 @@ using UnityEngine;
 public class UAV : NetworkBehaviour
 {
     private Player player;
-
-    [SerializeField] private float durationUav = 4f;
     private CinemachineVirtualCamera cinemachineVirtualCamera;
     private Vector3 followOffset;
+
+    [Header("Settings")]
+
     [SerializeField] private float heightIncrease = 7f;
+
+    [SerializeField] private float durationUav = 4f;
 
     void Update()
     {
@@ -47,7 +50,6 @@ public class UAV : NetworkBehaviour
             }
         }
     }
-
 
     [ServerRpc(RequireOwnership = false)]
     public void RequestUAVOwnershipServerRpc(ulong clientNetworkObjectId, ServerRpcParams serverRpcParams = default)

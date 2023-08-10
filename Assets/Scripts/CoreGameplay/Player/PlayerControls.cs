@@ -8,7 +8,9 @@ public class PlayerControls : NetworkBehaviour
 {
     Vector3 movement;
 
-    [SerializeField] private float movementSpeed = 5f;
+    [SerializeField] public NetworkVariable<float> movementSpeed = 
+        new NetworkVariable<float>(5f, NetworkVariableReadPermission.Everyone,NetworkVariableWritePermission.Server);
+
     [SerializeField] private float rotationSpeed = 720f;
 
     private Animator animator;
@@ -47,7 +49,7 @@ public class PlayerControls : NetworkBehaviour
         movement = new Vector3(horizontal, 0f, vertical);
         movement.Normalize();
 
-        transform.Translate(movement * movementSpeed * Time.deltaTime, Space.World);
+        transform.Translate(movement * movementSpeed.Value * Time.deltaTime, Space.World);
 
         if (movement != Vector3.zero)
         {
