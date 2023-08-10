@@ -26,7 +26,7 @@ public class HostSingleton : MonoBehaviour
             return instance;
         }
     }
-    // Start is called before the first frame update
+
     void Start()
     {
         DontDestroyOnLoad(gameObject);
@@ -35,5 +35,10 @@ public class HostSingleton : MonoBehaviour
     public void CreateHost()
     {
         GameManager = new HostGameManager();
+    }
+
+    private void OnDestroy()
+    {
+        GameManager?.Dispose();
     }
 }
