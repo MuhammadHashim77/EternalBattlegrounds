@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DealDamageOnContact : MonoBehaviour
 {
-    [SerializeField] private int damage = 5;
+    [SerializeField] private int damage = 10;
 
     private ulong ownerClientId;
 

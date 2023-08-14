@@ -4937,6 +4937,7 @@ GameObject:
   - component: {fileID: 3386247241812633823}
   - component: {fileID: 5794211673673516744}
   - component: {fileID: 2096010090146577396}
+  - component: {fileID: 3787760836692747748}
   m_Layer: 0
   m_Name: Soldier_demo
   m_TagString: Player
@@ -5031,7 +5032,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8c066833229b304590eb3729f3e0f01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 5
+  movementSpeed:
+    m_InternalValue: 5
   rotationSpeed: 720
 --- !u!114 &9006368918449820898
 MonoBehaviour:
@@ -5176,6 +5178,20 @@ MonoBehaviour:
         byte0027: 0
         byte0028: 0
         byte0029: 0
+--- !u!114 &3787760836692747748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655505027505988738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d949fcd276a1bd945969c664f8cd9a11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recoveryInterval: 2
+  healthRecoverAmount: 5
 --- !u!1 &655505027505988740
 GameObject:
   m_ObjectHideFlags: 0
