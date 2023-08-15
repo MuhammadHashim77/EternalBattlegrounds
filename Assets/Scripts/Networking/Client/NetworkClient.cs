@@ -22,7 +22,12 @@ public class NetworkClient : IDisposable
     {
         if(clientId != 0 && clientId != networkManager.LocalClientId) { return; }
 
-        if(SceneManager.GetActiveScene().name != MenuSceneName)
+        Disconnect();
+    }
+
+    public void Disconnect()
+    {
+        if (SceneManager.GetActiveScene().name != MenuSceneName)
         {
             SceneManager.LoadScene(MenuSceneName);
         }
