@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.Collections;
+using Unity.Netcode;
 using UnityEngine;
 
 public class LeaderboardEntityDisplay : MonoBehaviour
 {
     [SerializeField] private TMP_Text displayText;
+
+    [SerializeField] private Color myColor;
 
     public ulong ClientId { get; private set; }
 
@@ -16,6 +19,11 @@ public class LeaderboardEntityDisplay : MonoBehaviour
     {
         ClientId = clientId;
         this.playerName = playerName;
+
+        if(clientId == NetworkManager.Singleton.LocalClientId)
+        {
+            displayText.color = myColor;
+        }
 
         UpdateText();
     }
